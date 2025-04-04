@@ -1,0 +1,35 @@
+import { Component } from '@angular/core';
+
+@Component
+({
+  selector: 'app-calculator',
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class CalculatorComponent 
+{
+  print1: number = 0;
+  print2: number = 0;
+  print3: number = 0;
+  print4: string = '';
+
+  Add(num1: string, num2: string) {
+    this.print1 = Number(num1) + Number(num2);
+  }
+
+  Substract(num1: string, num2: string) {
+    this.print2 = Number(num1) - Number(num2);
+  }
+
+  Multiplication(num1: string, num2: string) {
+    this.print3 = Number(num1) * Number(num2);
+  }
+
+  Division(num1: string, num2: string) {
+    if (Number(num2) === 0) {
+      this.print4 = "Cannot divide by zero!";
+    } else {
+      this.print4 = (Number(num1) / Number(num2)).toFixed(2);
+    }
+  }
+}
