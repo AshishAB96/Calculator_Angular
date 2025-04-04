@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <div class="card shadow-lg p-4 rounded-4">
+    <h2 class="text-center mb-4 text-primary">
+      <i class="bi bi-calculator"></i> {{ title }}
+    </h2>
+
+    <div class="row g-3 mb-4">
+      <div class="col-md-6">
+        <input
+          type="number"
+          class="form-control form-control-lg"
+          placeholder="Enter first number"
+          [(ngModel)]="no1"
+        />
+      </div>
+      <div class="col-md-6">
+        <input
+          type="number"
+          class="form-control form-control-lg"
+          placeholder="Enter second number"
+          [(ngModel)]="no2"
+        />
+      </div>
+    </div>
+
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-primary btn-lg mx-2" (click)="add()">
+        <i class="bi bi-plus-circle"></i> Add
+      </button>
+      <button class="btn btn-outline-secondary btn-lg mx-2" (click)="subtract()">
+        <i class="bi bi-dash-circle"></i> Subtract
+      </button>
+      <button class="btn btn-outline-success btn-lg mx-2" (click)="multiply()">
+        <i class="bi bi-x-circle"></i> Multiply
+      </button>
+      <button class="btn btn-outline-danger btn-lg mx-2" (click)="divide()">
+        <i class="bi bi-slash-circle"></i> Divide
+      </button>
+    </div>
+
+    <div class="mt-4">
+      <h5 class="text-dark">Results:</h5>
+      <ul class="list-group list-group-flush fs-5">
+        <li class="list-group-item">Addition: <strong>{{ printAdd }}</strong></li>
+        <li class="list-group-item">Subtraction: <strong>{{ printSub }}</strong></li>
+        <li class="list-group-item">Multiplication: <strong>{{ printMul }}</strong></li>
+        <li class="list-group-item">Division: <strong>{{ printDiv }}</strong></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<router-outlet />
